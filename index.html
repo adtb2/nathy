@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Découvrez une guidance spirituelle personnalisée à travers le tirage de cartes pour des perspectives et conseils adaptés à votre chemin de vie, vous aidant à trouver clarté et confiance en l'avenir.">
+    <!-- Méta balise viewport ajoutée ici -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Voyance</title>
     <style>
       /* Style général */
       .image-container {
@@ -17,26 +21,28 @@
         background-size: cover;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between; /* Ajusté pour positionner le menu hamburger */
+        padding: 0 10px; /* Ajouté pour un peu d'espace */
       }
 
-      /* Style du menu hamburger (caché par défaut) */
-      .hamburger-menu {
+       /* Style du menu hamburger (caché par défaut) */
+       .hamburger-menu {
         display: none;
         font-size: 24px;
         background: none;
         border: none;
         cursor: pointer;
+        margin-right: auto;
       }
 
-      .buttons-container {
+        .buttons-container {
         display: flex;
         justify-content: center; /* Centre les boutons dans leur conteneur */
         flex-grow: 1; /* Permet aux boutons de prendre tout l'espace disponible */
-      }
+        }
 
-      /* Cachez le menu déroulant par défaut */
-      .menu-items {
+            /* Cachez le menu déroulant par défaut */
+        .menu-items {
         display: none; /* reste caché par défaut */
         flex-direction: column;
         align-items: flex-start;
@@ -47,7 +53,7 @@
         z-index: 1000; /* S'assurer qu'il est au-dessus des autres éléments */
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Ajoute une ombre pour un effet de profondeur */
         padding: 10px; /* Un peu de padding autour des éléments de menu */
-      }
+        }
 
 
       /* Style des boutons lorsqu'ils sont dans le menu déroulant */
@@ -56,31 +62,27 @@
         width: 100%;
         text-align: left;
       }
-      /* Style du menu déroulant lorsqu'il est actif */
-      .menu-items.active {
-        display: inline-flex;
-      }
-
-      
-
+/* Style du menu déroulant lorsqu'il est actif */
+.menu-items.active {
+  display: inline-flex;
+}
 
       /* Style des boutons */
       .button {
-        margin: 0 10px;
+        margin: 5px 0; /* Ajusté pour le menu déroulant */
         padding: 10px 20px;
         background-color: #FDFFF4;
         border: none;
         border-radius: 20px;
         cursor: pointer;
         font-family: 'Times New Roman', Times, serif;
-        font-size: 22px;
+        font-size: 22px; /* Ajusté pour un meilleur ajustement dans le menu */
         transition: background-color 0.3s;
       }
 
       .button:hover {
         background-color: #e2e6ea;
       }
-
 
       /* Style modifié pour le conteneur de contenu */
       .content {
@@ -102,15 +104,8 @@
         z-index: -1; /* S'assure que la vidéo est en arrière-plan */
       }
 
-
-      video {
-        width: 100%;
-        height: 100%; /* ou ajustez selon les besoins */
-        object-fit: contain
-      }
-      
-       /* Style pour le texte superposé */
-       .video-text {
+      /* Style pour le texte superposé */
+      .video-text {
         color: white;
         font-size: 60px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -125,6 +120,51 @@
         transform: translate(-50%, -50%); /* Ajuste le positionnement */
       }
 
+      .reseau {
+          display: flex; 
+          justify-content: center; /* Centre les éléments horizontalement */
+          align-items: center; /* Centre les éléments verticalement */
+          background-color: rgb(161, 216, 128);
+        }
+
+        .rounded-icon {
+          width: 50px; /* ou la taille que vous préférez */
+          height: 50px; /* ou la taille que vous préférez */
+          border-radius: 50%; /* Ceci rend l'image ronde */
+          object-fit: cover; /* Assure que l'image couvre bien tout le cercle */
+          margin: 10px; /* Ajoute un peu d'espace autour des icônes */
+        }
+
+        .social-icon {
+          display: flex; /* Utilise flexbox pour centrer l'image dans le lien */
+          justify-content: center; /* Centre l'image horizontalement */
+          align-items: center; /* Centre l'image verticalement */
+          width: 70px; /* Largeur du conteneur de l'icône */
+          height: 70px; /* Hauteur du conteneur de l'icône */
+          background-color: #fff; /* Couleur de fond - vous pouvez changer cela */
+          border-radius: 50%; /* Rend le fond de l'icône rond */
+          box-shadow: 0 0 8px rgba(0,0,0,0.15); /* Ajoute une légère ombre pour un effet de profondeur */
+          margin: 25px 50px; /* Ajoute 25px de marge de chaque côté de l'icône pour faire 50px d'espace total entre eux */
+        }
+
+        /* Styles spécifiques aux réseaux */
+        .facebook { background-color: #3b5998; }
+        .youtube { background-color: #FF0000; }
+        .instagram { background-color: #C13584; }
+        .tiktok { background-color: #000000; }
+
+        .reseau-text {
+        display: flex;
+        justify-content: center; /* Centre horizontalement */
+        align-items: center; /* Centre verticalement */
+        font-size: 25px; /* Définit la taille de police à 25px */
+        color: black; /* Définit la couleur du texte à noir */
+        text-align: center; /* Assure que le texte est centré même si la flexbox ne fonctionne pas */
+        background-color: rgb(208, 195, 169);
+        margin: 0;
+        padding: 25px;
+  
+      }
 
       .intro{
           
@@ -137,193 +177,61 @@
           text-justify: inter-word; /* Améliore l'aspect du texte justifié */
           background-color: rgb(208, 195, 169);
         }
-        
-        .reseau {
-  display: flex; 
-  justify-content: center; /* Centre les éléments horizontalement */
-  align-items: center; /* Centre les éléments verticalement */
-  background-color: rgb(161, 216, 128);
-}
-
-.rounded-icon {
-  width: 50px; /* ou la taille que vous préférez */
-  height: 50px; /* ou la taille que vous préférez */
-  border-radius: 50%; /* Ceci rend l'image ronde */
-  object-fit: cover; /* Assure que l'image couvre bien tout le cercle */
-  margin: 10px; /* Ajoute un peu d'espace autour des icônes */
-}
-
-.social-icon {
-  display: flex; /* Utilise flexbox pour centrer l'image dans le lien */
-  justify-content: center; /* Centre l'image horizontalement */
-  align-items: center; /* Centre l'image verticalement */
-  width: 70px; /* Largeur du conteneur de l'icône */
-  height: 70px; /* Hauteur du conteneur de l'icône */
-  background-color: #fff; /* Couleur de fond - vous pouvez changer cela */
-  border-radius: 50%; /* Rend le fond de l'icône rond */
-  box-shadow: 0 0 8px rgba(0,0,0,0.15); /* Ajoute une légère ombre pour un effet de profondeur */
-  margin: 25px 50px; /* Ajoute 25px de marge de chaque côté de l'icône pour faire 50px d'espace total entre eux */
-}
-
-/* Styles spécifiques aux réseaux */
-.facebook { background-color: #3b5998; }
-.youtube { background-color: #FF0000; }
-.instagram { background-color: #C13584; }
-.tiktok { background-color: #000000; }
-
-      /* Style des wrappers pour images */
-      .image-wrapper {
-        width: 50%;
-        height: 500px;
-        background-color: black;
-        overflow: hidden;
-      }
-
-      /* Styles pour les images avec animation */
-      .image2, .image3 {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .image2 {
-        background-image: url('image2.jpg');
-        animation: slideInFromLeft 0.8s ease-out forwards;
-      }
-
-      .image3 {
-        background-image: url('image3.jpg');
-        animation: slideInFromRight 0.8s ease-out forwards;
-      }
-
-      .image-text {
-        color: rgb(46, 32, 124);
-        font-size: 18px;
-        text-align: justify;
-        max-width: 80%;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      .reseau-text {
-        display: flex;
-        justify-content: center; /* Centre horizontalement */
-        align-items: center; /* Centre verticalement */
-        font-size: 25px; /* Définit la taille de police à 25px */
-        color: black; /* Définit la couleur du texte à noir */
-        text-align: center; /* Assure que le texte est centré même si la flexbox ne fonctionne pas */
-        background-color: rgb(208, 195, 169);
-        margin: 0;
-        padding: 25px;
-  
-      }
-      
-
-      /* Media Query pour smartphones */
-      @media (max-width: 768px) {
-        .content {
-    /* Réglez une largeur maximale pour le contenu */
-    max-width: 100%; /* Ajustez selon vos besoins */
-    overflow-x: hidden; /* Empêche la barre de défilement horizontale */
-
-  }
-        .video-text {
-          font-size: 40px; /* Diminuez la taille de la police */
-          top: 40%; /* Position verticale */
-          left: 50%; /* Position horizontale */
-          transform: translate(-50%, -50%); /* Centre le texte exactement */
-          width: auto; /* Permet au texte de prendre la largeur nécessaire */
-        }
-
-      
+   
+     /************************************************************* Media Query pour smartphones **************************************************************/
+     @media (max-width: 900px) {
         .hamburger-menu {
           display: block;
         }
 
         .header .button {
-          display: none;
+          display: none; /* Cache les boutons dans le header */
         }
 
         .header {
-          justify-content: flex-start;
+          justify-content: space-between; /* Ajuste les éléments du header */
         }
 
 
-        .image-wrapper {
-          width: 100%;
+        .content {
+        /* Réglez une largeur maximale pour le contenu */
+        max-width: 100%; /* Ajustez selon vos besoins */
+        overflow-x: hidden; /* Empêche la barre de défilement horizontale */
+        }
+
+        .video-text {
+        font-size: 40px; /* Diminuez la taille de la police */
+        top: 40%; /* Position verticale */
+        left: 50%; /* Position horizontale */
+        transform: translate(-50%, -50%); /* Centre le texte exactement */
+        width: auto; /* Permet au texte de prendre la largeur nécessaire */
         }
 
         .rounded-icon {
-          width: 40px; /* ou la taille que vous préférez */
-          height: 40px; /* ou la taille que vous préférez */
-          border-radius: 10%; /* Ceci rend l'image ronde */
-          object-fit: cover; /* Assure que l'image couvre bien tout le cercle */
-          margin: 0px; /* Ajoute un peu d'espace autour des icônes */
-          padding: 0;
-      }
-      .social-icon {
-
-      margin: 15px 15px; /* Ajoute 25px de marge de chaque côté de l'icône pour faire 50px d'espace total entre eux */
-}
-
-.reseau-text {
-        font-size: 20px; /* Définit la taille de police à 25px */
-      }
-
-      
-      .intro{
-          font-size: 20px; /* Taille de police de 20px */
+            width: 40px; /* ou la taille que vous préférez */
+            height: 40px; /* ou la taille que vous préférez */
+            border-radius: 10%; /* Ceci rend l'image ronde */
+            object-fit: cover; /* Assure que l'image couvre bien tout le cercle */
+            margin: 0px; /* Ajoute un peu d'espace autour des icônes */
+            padding: 0;
+            }
+        .social-icon {
+        margin: 15px 15px; /* Ajoute 25px de marge de chaque côté de l'icône pour faire 50px d'espace total entre eux */
         }
 
-.video-container {
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          position: absolute; /* Position absolue pour superposer */
-          top: 0;
-          left: 0;
-          z-index: -1; /* S'assure que la vidéo est en arrière-plan */
-          transform: scale(1.5); /* Zoom à 150% (ajustez la valeur pour le niveau de zoom souhaité) */
-          transform-origin: center; /* Centre le point de zoom au centre de la vidéo */
-        }
-
-video {
-  width: 100%;
-  height: 100%; /* ou ajustez selon les besoins */
-  object-fit: contain;
-}
-
-    }
-
-      /* Animations */
-      @keyframes slideInFromLeft {
-        from {
-          transform: translateX(-100%);
-        }
-        to {
-          transform: translateX(0);
-        }
+        .reseau-text {
+            font-size: 20px; /* Définit la taille de police à 25px */
+            }
+            .intro{
+            font-size: 20px; /* Taille de police de 20px */
+            }
       }
 
-      @keyframes slideInFromRight {
-        from {
-          transform: translateX(100%);
-        }
-        to {
-          transform: translateX(0);
-        }
-      }
 
-      @keyframes slideInFromTop {
-        from {
-          transform: translateY(-100%);
-        }
-        to {
-          transform: translateY(0);
-        }
-      }
+ 
+
+
+     
     </style>
 </head>
 <body>
@@ -352,54 +260,37 @@ video {
 </div>
 
 <div class="content">
-  <div class="video-container">
-    <video src="index.mp4" autoplay muted playsinline style="object-fit: cover;" playbackRate="2">
-      Désolé, votre navigateur ne prend pas en charge les vidéos intégrées.
-    </video>
-  </div>
-  <p class="video-text">La Lumière de salomé <BR>Guidances et Soins</p> 
-</div>
-
-<p class="reseau-text">Suivez moi sur les réseaux sociaux, cliquez sur les icônes ci-dessous.</p>
-
-<div class="reseau">
-
-  <a href="https://facebook.com/Hildegarde.ETHALON.LOIGET" class="social-icon facebook" target="_blank">
-    <img src="facebook.png" alt="Facebook" class="rounded-icon">
-  </a>
-  <a href="https://www.youtube.com/@lalumieredesalomeguidancee3071" class="social-icon youtube" target="_blank">
-    <img src="youtube.png" alt="YouTube" class="rounded-icon">
-  </a>
-  <a href="https://www.instagram.com/lalumieredesalome/?hl=fr" class="social-icon instagram" target="_blank">
-    <img src="instagram.png" alt="Instagram" class="rounded-icon">
-  </a>
-  <a href="https://www.tiktok.com/@lillyersilie" class="social-icon tiktok" target="_blank">
-    <img src="tiktok.png" alt="TikTok" class="rounded-icon">
-  </a>
-</div>
-
-<div class="intro">
-  <p >Bienvenue sur mon espace spirituel<BR><BR>
-    Je m'appelle Salomé, et je suis médium et guide spirituel depuis plus de 10 ans. Mon parcours a débuté suite à des événements bouleversants qui ont ouvert mes capacités psychiques. En tant que médium, je possède des dons tels que la clairvoyance, la clairaudience, la clairsentience et la claircognizance. J'offre des consultations de voyance approfondies, communique avec les défunts et pratique la lecture d'âme pour la guérison et le développement personnel. Je maîtrise également diverses techniques de soins énergétiques, y compris le Reiki et le LaHoChi, et je suis spécialisée dans le dégagement des énergies négatives. Mon objectif est d'accompagner chaque individu avec empathie et discrétion sur son chemin de vie.
-    <BR><BR>Salomé</p>
-</div>
-
-
-<div class="image-container">
-  <div class="image-wrapper">
-    <div class="image2">
-      <p class="image-text">Texte à mettre ...</p>
+    <div class="video-container">
+      <video src="index.mp4" autoplay muted playsinline style="object-fit: cover;" playbackRate="2">
+        Désolé, votre navigateur ne prend pas en charge les vidéos intégrées.
+      </video>
     </div>
+    <p class="video-text">La Lumière de salomé <BR>Guidances et Soins</p> 
   </div>
-  <div class="image-wrapper">
-    <div class="image3">
-      <!-- Aucun texte pour image3 -->
-    </div>
+  
+  <p class="reseau-text">Suivez moi sur les réseaux sociaux, cliquez sur les icônes ci-dessous.</p>
+
+  <div class="reseau">
+  
+    <a href="https://facebook.com/Hildegarde.ETHALON.LOIGET" class="social-icon facebook" target="_blank">
+      <img src="facebook.png" alt="Facebook" class="rounded-icon">
+    </a>
+    <a href="https://www.youtube.com/@lalumieredesalomeguidancee3071" class="social-icon youtube" target="_blank">
+      <img src="youtube.png" alt="YouTube" class="rounded-icon">
+    </a>
+    <a href="https://www.instagram.com/lalumieredesalome/?hl=fr" class="social-icon instagram" target="_blank">
+      <img src="instagram.png" alt="Instagram" class="rounded-icon">
+    </a>
+    <a href="https://www.tiktok.com/@lillyersilie" class="social-icon tiktok" target="_blank">
+      <img src="tiktok.png" alt="TikTok" class="rounded-icon">
+    </a>
   </div>
-</div>
 
-
-
+  <div class="intro">
+    <p >Bienvenue sur mon espace spirituel<BR><BR>
+      Je m'appelle Salomé, et je suis médium et guide spirituel depuis plus de 10 ans. Mon parcours a débuté suite à des événements bouleversants qui ont ouvert mes capacités psychiques. En tant que médium, je possède des dons tels que la clairvoyance, la clairaudience, la clairsentience et la claircognizance. J'offre des consultations de voyance approfondies, communique avec les défunts et pratique la lecture d'âme pour la guérison et le développement personnel. Je maîtrise également diverses techniques de soins énergétiques, y compris le Reiki et le LaHoChi, et je suis spécialisée dans le dégagement des énergies négatives. Mon objectif est d'accompagner chaque individu avec empathie et discrétion sur son chemin de vie.
+      <BR><BR>Salomé</p>
+  </div>
 <script>
   // Script pour gérer le menu hamburger
   document.addEventListener('DOMContentLoaded', function() {
@@ -411,6 +302,5 @@ video {
     });
   });
 </script>
-
 </body>
 </html>
