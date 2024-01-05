@@ -157,8 +157,8 @@
         animation: slideInFromTop 2s ease-out forwards;
       }
 
-      /* Media Query pour smartphones */
-      @media (max-width: 768px) {
+     /* Media Query pour smartphones */
+     @media (max-width: 900px) {
         .hamburger-menu {
           display: block;
         }
@@ -177,20 +177,18 @@
         }
 
               /* Style pour la div du texte Médiumnité */
-      .medium-text {
-        
-        font-size: 50px;
-        right: 30%; /* 30px du côté gauche du conteneur */
-        top: 70%; /* 20px du bas du conteneur */
-        
-      }
-      .image-text {
-    font-size: 20px; /* Smaller font size for mobile devices */
-    padding: 10px; /* Padding around the text */
-    text-align: justify; /* Justify the text */
-    
-
-  }
+              .medium-text {
+                font-size: 40px; /* Réduisez la taille de police pour s'adapter aux smartphones */
+                text-align: center; /* Centrez horizontalement le texte */
+                top: 50%; /* Déplacez le texte vers le centre de l'écran */
+                right: auto; /* Réinitialisez la propriété right pour centrer le texte complètement */
+                transform: translate(0, -50%); /* Utilisez transform pour centrer verticalement */
+              }
+                  .image-text {
+                font-size: 20px; /* Smaller font size for mobile devices */
+                padding: 10px; /* Padding around the text */
+                text-align: justify; /* Justify the text */
+              }
 
   .content {
     /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
@@ -198,22 +196,22 @@
   }
 
   .medium-text {
-    font-size: 40px; /* Réduisez la taille de police pour s'adapter aux smartphones */
-    text-align: center; /* Centrez horizontalement le texte */
-    top: 50%; /* Déplacez le texte vers le centre de l'écran */
-    right: auto; /* Réinitialisez la propriété right pour centrer le texte complètement */
-    transform: translate(0, -20%); /* Utilisez transform pour centrer verticalement */
-  }
+        
+        font-size: 40px;
+        text-align: center;
+        /*right: 30%; /* 30px du côté gauche du conteneur */
+        /*top: 70%;*/ /* 20px du bas du conteneur */
+        
+      }
 
   .image4 {
        
-       height: 300px;
+        height: 300px;
 
-     }
-
-  
+      }
       
       }
+
 
       @media only screen and (min-width: 200px) and (max-width: 400px) { 
     /* la regle s'applique pour une taille d'ecran comprise entre 320px - 479px */
@@ -224,6 +222,7 @@
     /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
     height: 100px; /* Exemple : Réduire la hauteur sur les petits écrans */
   }
+}
 
       /* Animations */
       @keyframes slideInFromLeft {
