@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Voyance" content="Découvrez une guidance spirituelle personnalisée à travers le tirage de cartes pour des perspectives et conseils adaptés à votre chemin de vie, vous aidant à trouver clarté et confiance en l'avenir.">
+    <!-- Méta balise viewport ajoutée ici -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Voyance</title>
+    <style>
+      /* Style général */
+      .image-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /* Style du bandeau avec le menu hamburger */
+      .header {
+        width: 100%;
+        height: 50px;
+        background-image: url('bandeau.jpg');
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Ajusté pour positionner le menu hamburger */
+        padding: 0 10px; /* Ajouté pour un peu d'espace */
+      }
+
+       /* Style du menu hamburger (caché par défaut) */
+       .hamburger-menu {
+        display: none;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: auto;
+      }
+
+.buttons-container {
+  display: flex;
+  justify-content: center; /* Centre les boutons dans leur conteneur */
+  flex-grow: 1; /* Permet aux boutons de prendre tout l'espace disponible */
+}
+
+      /* Cachez le menu déroulant par défaut */
+ .menu-items {
+  display: none; /* reste caché par défaut */
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute; /* Position absolue pour le faire flotter au-dessus du contenu */
+  background-color: white; /* Arrière-plan pour le rendre visible sur d'autres contenus */
+  top: 50px; /* Juste en dessous du header */
+  left: 10px; /* Légèrement décalé à gauche pour l'aligner avec le menu hamburger */
+  z-index: 1000; /* S'assurer qu'il est au-dessus des autres éléments */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Ajoute une ombre pour un effet de profondeur */
+  padding: 10px; /* Un peu de padding autour des éléments de menu */
+}
+
+
+      /* Style des boutons lorsqu'ils sont dans le menu déroulant */
+      .menu-items .button {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+/* Style du menu déroulant lorsqu'il est actif */
+.menu-items.active {
+  display: inline-flex;
+}
+
+      /* Style des boutons */
+      .button {
+        margin: 5px 0; /* Ajusté pour le menu déroulant */
+        padding: 10px 20px;
+        background-color: #FDFFF4;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 22px; /* Ajusté pour un meilleur ajustement dans le menu */
+        transition: background-color 0.3s;
+      }
+
+      .button:hover {
+        background-color: #e2e6ea;
+      }
+
+      .content {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url('background_voyance.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: rgb(203, 33, 138);
+  font-size: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding-bottom: 20px;
+}
+
+      /* Style des wrappers pour images */
+      .image-wrapper {
+        width: 50%;
+        height: 500px;
+        background-color: black;
+        overflow: hidden;
+      }
+
+      /* Styles pour les images avec animation */
+      .image2, .image3 {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .image2 {
+        background-image: url('image2_voyance.jpg');
+        animation: slideInFromLeft 0.8s ease-out forwards;
+      }
+
+      .image3 {
+        background-image: url('image3_voyance.webp');
+        animation: slideInFromRight 0.8s ease-out forwards;
+      }
+
+      .image-text {
+        color: rgb(46, 32, 124);
+        font-size: 24px;
+        text-align: justify;
+        max-width: 80%;
+        margin-top: -100px;
+        
+      }
+
+      /* Style pour la div du texte Médiumnité */
+      .medium-text {
+        position: absolute; /* Positionnement absolu par rapport à son parent relatif */
+        top: 160px; /* 120px du haut du conteneur */
+        right: 20%; /* 20px du côté gauche du conteneur */
+        color: white;
+        font-size: 60px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .image4 {
+        width: 100%;
+        height: 600px;
+        background-image: url('image_bottom.webp');
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: slideInFromTop 2s ease-out forwards;
+      }
+
+      /* Media Query pour smartphones */
+      @media (max-width: 768px) {
+        .hamburger-menu {
+          display: block;
+        }
+
+        .header .button {
+          display: none; /* Cache les boutons dans le header */
+        }
+
+        .header {
+          justify-content: space-between; /* Ajuste les éléments du header */
+        }
+
+        .image-wrapper {
+          width: 100%; /* Ajustez la largeur à 100% du conteneur parent */
+         
+        }
+
+              /* Style pour la div du texte Médiumnité */
+      .medium-text {
+        
+        font-size: 50px;
+        right: 30%; /* 30px du côté gauche du conteneur */
+        top: 70%; /* 20px du bas du conteneur */
+        
+      }
+      .image-text {
+    font-size: 20px; /* Smaller font size for mobile devices */
+    padding: 10px; /* Padding around the text */
+    text-align: justify; /* Justify the text */
+    
+
+  }
+
+  .content {
+    /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
+    height: 300px; /* Exemple : Réduire la hauteur sur les petits écrans */
+  }
+
+  .medium-text {
+    font-size: 40px; /* Réduisez la taille de police pour s'adapter aux smartphones */
+    text-align: center; /* Centrez horizontalement le texte */
+    top: 50%; /* Déplacez le texte vers le centre de l'écran */
+    right: auto; /* Réinitialisez la propriété right pour centrer le texte complètement */
+    transform: translate(0, -20%); /* Utilisez transform pour centrer verticalement */
+  }
+
+  .image4 {
+       
+       height: 300px;
+
+     }
+
+  
+      
+      }
+
+      /* Animations */
+      @keyframes slideInFromLeft {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInFromRight {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInFromTop {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+    </style>
+</head>
+<body>
+
+  <div class="header">
+    <button class="hamburger-menu">☰</button>
+    <div class="buttons-container">
+      <button class="button" onclick="window.location.href='start.html'">Accueil</button>
+      <button class="button" onclick="window.location.href='medium.html'">Médiumnité</button>
+      <button class="button" onclick="window.location.href='soins.html'">Soins énergétiques</button>
+      <button class="button" onclick="window.location.href='voyance.html'">Voyance</button>
+      <button class="button">Coaching</button>
+      <button class="button" onclick="window.location.href='boutique.html'">Boutique</button>
+      <button class="button" onclick="window.location.href='contact.html'">Contact</button>
+    </div>
+  </div>
+    <!-- Les éléments du menu déroulant -->
+    <div class="menu-items">
+      <button class="button" onclick="window.location.href='start.html'">Accueil</button>
+      <button class="button" onclick="window.location.href='medium.html'">Médiumnité</button>
+      <button class="button" onclick="window.location.href='soins.html'">Soins énergétiques</button>
+      <button class="button" onclick="window.location.href='voyance.html'">Voyance</button>
+      <button class="button">Coaching</button>
+      <button class="button" onclick="window.location.href='boutique.html'">Boutique</button>
+      <button class="button" onclick="window.location.href='contact.html'">Contact</button>
+    </div>
+ 
+</div>
+
+<div class="content">
+  <div class="medium-text">Voyance</div>
+</div>
+
+<div class="image-container">
+  <div class="image-wrapper">
+    <div class="image2">
+      <p class="image-text">Je vous invite à découvrir mes services de guidance spirituelle personnalisée, notamment à travers le tirage de cartes. Cette pratique divinatoire ancestrale vous offre des perspectives uniques et des conseils adaptés à votre chemin de vie. Que vous cherchiez des réponses à des questions précises ou un éclairage général sur votre situation actuelle, la guidance personnalisée est là pour vous accompagner vers la clarté et la confiance en votre avenir.</p>
+    </div>
+  </div>
+  <div class="image-wrapper">
+    <div class="image3">
+      <!-- Aucun texte pour image3 -->
+    </div>
+  </div>
+</div>
+
+<div class="image4">
+  <!-- Contenu optionnel pour image4 -->
+</div>
+
+<script>
+  // Script pour gérer le menu hamburger
+  document.addEventListener('DOMContentLoaded', function() {
+    var hamburger = document.querySelector('.hamburger-menu');
+    var menu = document.querySelector('.menu-items');
+
+    hamburger.addEventListener('click', function() {
+      menu.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>
