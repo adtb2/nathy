@@ -192,7 +192,7 @@
 
   .content {
     /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
-    height: 300px; /* Exemple : Réduire la hauteur sur les petits écrans */
+    height: 200px; /* Exemple : Réduire la hauteur sur les petits écrans */
   }
 
   .image4 {
@@ -202,6 +202,14 @@
      }
       
       }
+
+      @media only screen and (min-width: 320px) and (max-width: 350px) { 
+    /* la regle s'applique pour une taille d'ecran comprise entre 320px - 479px */
+    .image-text {
+    font-size: 18px; /* Smaller font size for mobile devices */
+    margin-top: -50px;
+  }
+}
 
       /* Animations */
       @keyframes slideInFromLeft {
