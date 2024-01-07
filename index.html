@@ -94,6 +94,11 @@
         position: relative; /* Position relative pour le positionnement absolu du texte */
       }
 
+
+      .full-width-video {
+        width: 100%;
+        object-fit: cover;
+          }
       .video-container {
         width: 100%;
         height: 100%;
@@ -198,7 +203,10 @@
         max-width: 100%; /* Ajustez selon vos besoins */
         overflow-x: hidden; /* Empêche la barre de défilement horizontale */
         }
-
+        .full-width-video {
+        height: 650px;
+        
+          }
         .video-text {
         font-size: 40px; /* Diminuez la taille de la police */
         top: 40%; /* Position verticale */
@@ -225,6 +233,12 @@
             .intro{
             font-size: 20px; /* Taille de police de 20px */
             }
+      }
+
+      @media only screen and (min-width: 900px) and (max-width: 1223px) { 
+.content {
+   height: 450px;
+}
       }
 
 
@@ -261,7 +275,7 @@
 
 <div class="content">
     <div class="video-container">
-      <video src="index.mp4" autoplay muted playsinline style="object-fit: cover;" playbackRate="2">
+      <video class= "full-width-video" src="index.mp4" autoplay muted playsinline style="object-fit: cover;" playbackRate="2">
         Désolé, votre navigateur ne prend pas en charge les vidéos intégrées.
       </video>
     </div>
