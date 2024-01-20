@@ -6,6 +6,7 @@
     <meta name="description" content="Découvrez une guidance spirituelle personnalisée à travers le tirage de cartes pour des perspectives et conseils adaptés à votre chemin de vie, vous aidant à trouver clarté et confiance en l'avenir.">
     <!-- Méta balise viewport ajoutée ici -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Voyance</title>
     <style>
       /* Style général */
@@ -113,6 +114,7 @@
       /* Style pour le texte superposé */
       .video-text {
         color: white;
+        font-family: 'Roboto', sans-serif;
         font-size: 60px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         position: absolute; /* Position absolue pour le superposer sur la vidéo */
@@ -163,6 +165,7 @@
         display: flex;
         justify-content: center; /* Centre horizontalement */
         align-items: center; /* Centre verticalement */
+        font-family: 'Roboto', sans-serif;
         font-size: 25px; /* Définit la taille de police à 25px */
         color: black; /* Définit la couleur du texte à noir */
         text-align: center; /* Assure que le texte est centré même si la flexbox ne fonctionne pas */
@@ -176,7 +179,7 @@
           
           padding:30px;
           color: black; /* Couleur du texte */
-          font-family: 'Times New Roman', Times, serif; /* Police Times New Roman */
+          font-family: 'Roboto', sans-serif;
           font-size: 30px; /* Taille de police de 20px */
           text-align: justify; /* Justifie le texte */
           /* Ajoutez une petite marge à droite pour éviter que la dernière ligne ne soit trop étirée */
@@ -194,10 +197,12 @@
     .classA {
         width: 33.33%;
         background-color:white;
+        font-family: 'Roboto', sans-serif;
     }
     .classB {
         width: 66.66%;
         background-color: green;
+        font-family: 'Roboto', sans-serif;
     }
     
 
@@ -305,6 +310,7 @@
 }
 
 .adresse-detail {
+  font-family: 'Roboto', sans-serif;
   font-size: 14px; /* Taille de police pour le détail de l'adresse */
   text-align: left; /* Alignement à gauche */
   margin: 0; /* Réduit l'espace autour du paragraphe, si nécessaire */
@@ -332,10 +338,6 @@
     /* Ajoutez ici d'autres styles comme le padding, la marge, etc., selon vos besoins */
 }
 
-.contact2 {
-  background-color: rgb(245, 240, 236);
-  
-}
 
 .contact1 {
   background-color: rgb(245, 240, 236);
@@ -355,6 +357,8 @@
     display: flex;
     justify-content: left;
     align-items: center;
+    background-color: rgb(245, 240, 236);
+
 }
 
 .contact2 .button {
@@ -373,6 +377,14 @@
 
 .contact2 .button:hover {
     background-color: #e2e6ea; /* Couleur de fond au survol */
+}
+
+.welcome-text {
+    font-size: 40px;
+}
+
+.italic-text {
+    font-style: italic;
 }
      /************************************************************* Media Query pour smartphones **************************************************************/
      @media (max-width: 900px) {
@@ -437,16 +449,24 @@
 
     .contact1, .contact2 {
         width: 100%; /* Chaque sous-classe occupe toute la largeur du parent */
+
        
     }
 
+
+    .contact2 {
+padding-bottom: 40px;
+    }
     .contact2 button, .contact2 .button {
         margin: 0 auto; /* Centre le bouton horizontalement */
         display: block; /* Rend le bouton en tant qu'élément de bloc */
         font-size: 30px;
-        
+        font-family: 'Roboto', sans-serif;
     }
 
+    .welcome-text {
+    font-size: 25px;
+}
    
 
       }
@@ -513,9 +533,9 @@
   </div>
 
   <div class="intro">
-    <p >Bienvenue sur mon espace spirituel<BR><BR>
+    <span class="welcome-text">Bienvenue sur mon espace spirituel</span><br><br>
       Je m'appelle Salomé, et je suis médium et guide spirituel depuis plus de 10 ans. Mon parcours a débuté suite à des événements bouleversants qui ont ouvert mes capacités psychiques. En tant que médium, je possède des dons tels que la clairvoyance, la clairaudience. J'offre des consultations de voyance approfondies, communique avec les défunts et pratique la lecture d'âme pour la guérison et le développement personnel. Je maîtrise également diverses techniques de soins énergétiques, y compris le Reiki et le LaHoChi, et je suis spécialisée dans le dégagement des énergies négatives. Mon objectif est d'accompagner chaque individu avec empathie et discrétion sur son chemin de vie.
-      <BR><BR>Salomé</p>
+      <br><br><span class="italic-text">Salomé</span></p>
   </div>
 
   <div class="classA">
