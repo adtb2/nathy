@@ -243,6 +243,11 @@
                   text-align: justify; /* Justify the text */
                 }
       
+                .classA, .classB {
+    width: 100%;
+    float: none;
+}
+          
           
           }
 
@@ -255,6 +260,175 @@
       .preB {
         margin: 0px
       }
+
+      
+        /* New classes */
+    .classA, .classB {
+        float: left;
+        height: 600px; /* Example height, can be adjusted */
+    }
+    
+    .classA {
+        width: 33.33%;
+        background-color:white;
+        font-family: 'Roboto', sans-serif;
+    }
+    .classB {
+        width: 66.66%;
+        background-color: green;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+
+    /* Clearfix for the floating elements */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+   
+    /* Styles pour les sous-divisions de ClassA */
+.classA1, .classA2, .classA3 {
+    width: 100%; /* Occupe toute la largeur de ClassA */
+    height: 33.33%; /* Occupe un tiers de la hauteur de ClassA */
+}
+
+.classA1 {
+    background-color: grey;
+}
+
+.classA2 {
+    background-color: white;
+}
+
+.classA3 {
+    background-color: red;
+}
+
+/* Styles pour les sous-divisions de ClassA1 */
+.classA11, .classA21, .classA31 {
+    width: 33.33%; /* Occupe 1/3 de la largeur */
+    height: 100%; /* Occupe toute la hauteur de la classe parent */
+    float: left; /* Alignement à gauche */
+}
+
+.classA12, .classA22, .classA32 {
+    width: 66.66%; /* Occupe 2/3 de la largeur */
+    height: 100%; /* Occupe toute la hauteur de la classe parent */
+    float: left; /* Alignement à gauche */
+}
+
+.classA11 {
+    background-color: white;
+}
+
+.classA12 {
+    background-color: white;
+    display: flex; /* Utilisez Flexbox */
+    flex-direction: column; /* Empilez les enfants verticalement */
+    justify-content: center; /* Centre verticalement dans le conteneur */
+    height: 100%; /* Assurez-vous que ClassA12 occupe toute la hauteur de son parent */
+}
+    
+
+
+/* Styles pour les sous-divisions de ClassA2 */
+.classA21 {
+    background-color: white;
+}
+
+.classA22 {
+  background-color: white;
+    display: flex; /* Utilisez Flexbox */
+    flex-direction: column; /* Empilez les enfants verticalement */
+    justify-content: center; /* Centre verticalement dans le conteneur */
+    height: 100%; /* Assurez-vous que ClassA12 occupe toute la hauteur de son parent */
+}
+
+/* Styles pour les sous-divisions de ClassA3 */
+.classA31 {
+    background-color:white;
+}
+
+.classA32 {
+  background-color: white;
+    display: flex; /* Utilisez Flexbox */
+    flex-direction: column; /* Empilez les enfants verticalement */
+    justify-content: center; /* Centre verticalement dans le conteneur */
+    height: 100%; /* Assurez-vous que ClassA12 occupe toute la hauteur de son parent */
+}
+
+.full-width-image {
+  width: 100%; /* Fait en sorte que l'image remplisse toute la largeur de ClassA11 */
+  height: 100%; /* Fait en sorte que l'image remplisse toute la hauteur de ClassA11 */
+  object-fit: cover; /* Assure que l'image couvre toute la zone sans être déformée */
+}
+
+.full-width-image2 {
+  width: 100%; /* Fait en sorte que l'image remplisse toute la largeur de ClassA11 */
+  height: 100%; /* Fait en sorte que l'image remplisse toute la hauteur de ClassA11 */
+  object-fit: cover; /* Assure que l'image couvre toute la zone sans être déformée */
+}
+
+.full-width-image3 {
+  width: 100%; /* Fait en sorte que l'image remplisse toute la largeur de ClassA11 */
+  height: 100%; /* Fait en sorte que l'image remplisse toute la hauteur de ClassA11 */
+  object-fit: cover; /* Assure que l'image couvre toute la zone sans être déformée */
+  cursor: pointer;
+}
+.adresse-title {
+  font-size: 25px; /* Taille de police pour le titre 'Adresse' */
+  text-align: left; /* Alignement à gauche */
+  margin: 0; /* Réduit l'espace autour du paragraphe, si nécessaire */
+  padding-left: 15%; /* Réduit l'espace intérieur, si nécessaire */
+}
+
+.adresse-detail {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px; /* Taille de police pour le détail de l'adresse */
+  text-align: left; /* Alignement à gauche */
+  margin: 0; /* Réduit l'espace autour du paragraphe, si nécessaire */
+  padding-left: 15%; /* Réduit l'espace intérieur, si nécessaire */
+}
+
+.classB .full-width-image3 {
+  width: 100%; /* Permet à l'image de remplir toute la largeur de ClassB */
+  height: 100%; /* Permet à l'image de remplir toute la hauteur de ClassB */
+  object-fit: cover; /* Assure que l'image couvre l'espace sans être déformée */
+}
+
+/* Style pour la classe principale 'contact' */
+.contact {
+    display: flex; /* Utilisez flex pour aligner les sous-divisions côte à côte */
+    width: 100%; /* Prend toute la largeur disponible */
+    height: 300px
+}
+
+/* Styles pour les sous-classes 'contact1' et 'contact2' */
+.contact1, .contact2 {
+    width: 50%; /* Chaque sous-classe occupe la moitié de la largeur de 'contact' */
+   padding-top: 50px;
+   
+    /* Ajoutez ici d'autres styles comme le padding, la marge, etc., selon vos besoins */
+}
+
+
+
+
+.welcome-text {
+    font-size: 40px;
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .classA, .classB {
+    width: 100%;
+    float: none;
+}
+}
 
       @media only screen and (min-width: 900px) and (max-width: 1200px) { 
     /* la regle s'applique pour une taille d'ecran comprise entre 320px - 479px */
@@ -387,6 +561,30 @@
       <!-- Aucun texte pour image3 -->
     </div>
   </div>
+  <div class="classA">
+    <div class="classA1">
+        <div class="classA11"> <img src="b.png" alt="Image Description" class="full-width-image"></div>
+        <div class="classA12"><p class="adresse-title">Téléphone</p>
+          <p class="adresse-detail">06 66 71 02 34</p>
+        </div>
+    </div>
+    <div class="classA2">
+        <div class="classA21"><img src="a.png" alt="Image Description" class="full-width-image2"></div>
+        <div class="classA22"><p class="adresse-title">Email</p>
+          <p class="adresse-detail">nathalie.ethalon@gmail.com </p>
+        </div>
+    </div>
+    <div class="classA3">
+        <div class="classA31"><img src="c.png" alt="Image Description" class="full-width-image3"></div>
+        <div class="classA32"><p class="adresse-title">Adresse</p>
+          <p class="adresse-detail">8, Grande rue</p>
+          <p class="adresse-detail">25440 Chenecey Buillon</p>
+        </div>
+    </div>
+</div>
+  <div class="classB"> <img src="map.jpg" alt="Carte" class="full-width-image3" id="mapImage"></div>
+  
+ 
 </div>
 
 
@@ -401,6 +599,15 @@
     hamburger.addEventListener('click', function() {
       menu.classList.toggle('active');
     });
+  });
+
+  document.getElementById('mapImage').addEventListener('click', function() {
+    var image = document.getElementById('mapImage');
+    if (image.src.match('map.jpg')) {
+      image.src = 'map2.jpg';
+    } else {
+      image.src = 'map.jpg';
+    }
   });
 </script>
 </body>
