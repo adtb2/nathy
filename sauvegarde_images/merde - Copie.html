@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Découvrez une guidance spirituelle personnalisée à travers le tirage de cartes pour des perspectives et conseils adaptés à votre chemin de vie, vous aidant à trouver clarté et confiance en l'avenir.">
+    <!-- Méta balise viewport ajoutée ici -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Voyance</title>
+    <style>
+      /* Style général */
+      .image-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /* Style du bandeau avec le menu hamburger */
+      .header {
+        width: 100%;
+        height: 50px;
+        background-image: url('bandeau.jpg');
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Ajusté pour positionner le menu hamburger */
+        padding: 0 10px; /* Ajouté pour un peu d'espace */
+      }
+
+       /* Style du menu hamburger (caché par défaut) */
+       .hamburger-menu {
+        display: none;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: auto;
+      }
+
+        .buttons-container {
+        display: flex;
+        justify-content: center; /* Centre les boutons dans leur conteneur */
+        flex-grow: 1; /* Permet aux boutons de prendre tout l'espace disponible */
+        }
+
+            /* Cachez le menu déroulant par défaut */
+        .menu-items {
+        display: none; /* reste caché par défaut */
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute; /* Position absolue pour le faire flotter au-dessus du contenu */
+        background-color: white; /* Arrière-plan pour le rendre visible sur d'autres contenus */
+        top: 50px; /* Juste en dessous du header */
+        left: 10px; /* Légèrement décalé à gauche pour l'aligner avec le menu hamburger */
+        z-index: 1000; /* S'assurer qu'il est au-dessus des autres éléments */
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Ajoute une ombre pour un effet de profondeur */
+        padding: 10px; /* Un peu de padding autour des éléments de menu */
+        }
+
+
+      /* Style des boutons lorsqu'ils sont dans le menu déroulant */
+      .menu-items .button {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+/* Style du menu déroulant lorsqu'il est actif */
+.menu-items.active {
+  display: inline-flex;
+}
+
+      /* Style des boutons */
+      .button {
+        margin: 5px 0; /* Ajusté pour le menu déroulant */
+        padding: 10px 20px;
+        background-color: #FDFFF4;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 22px; /* Ajusté pour un meilleur ajustement dans le menu */
+        transition: background-color 0.3s;
+      }
+
+      .button:hover {
+        background-color: #e2e6ea;
+      }
+
+      /* Style modifié pour le conteneur de contenu */
+      .content {
+        width: 100%;
+        height: 650px;
+        display: flex;
+        align-items: center; /* Centrer verticalement */
+        justify-content: center; /* Centrer horizontalement */
+        position: relative; /* Position relative pour le positionnement absolu du texte */
+      }
+
+
+      .full-width-video {
+        width: 100%;
+        object-fit: cover;
+          }
+      .video-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute; /* Position absolue pour superposer */
+        top: 0;
+        left: 0;
+        z-index: -1; /* S'assure que la vidéo est en arrière-plan */
+      }
+
+      /* Style pour le texte superposé */
+      .video-text {
+        color: white;
+        font-size: 60px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        position: absolute; /* Position absolue pour le superposer sur la vidéo */
+        z-index: 10; /* S'assure que le texte est au-dessus de la vidéo */
+        padding: 20px; /* Ajoutez du padding pour ne pas coller aux bords */
+        width: calc(100% - 40px); /* Ajustez la largeur pour prendre en compte le padding */
+        box-sizing: border-box; /* S'assure que le padding ne déborde pas */
+        text-align: center; /* Centrez le texte */
+        top: 50%; /* Centre verticalement */
+        left: 50%; /* Centre horizontalement */
+        transform: translate(-50%, -50%); /* Ajuste le positionnement */
+      }
+
+      .reseau {
+          display: flex; 
+          justify-content: center; /* Centre les éléments horizontalement */
+          align-items: center; /* Centre les éléments verticalement */
+          background-color: rgb(161, 216, 128);
+        }
+
+        .rounded-icon {
+          width: 50px; /* ou la taille que vous préférez */
+          height: 50px; /* ou la taille que vous préférez */
+          border-radius: 50%; /* Ceci rend l'image ronde */
+          object-fit: cover; /* Assure que l'image couvre bien tout le cercle */
+          margin: 10px; /* Ajoute un peu d'espace autour des icônes */
+        }
+
+        .social-icon {
+          display: flex; /* Utilise flexbox pour centrer l'image dans le lien */
+          justify-content: center; /* Centre l'image horizontalement */
+          align-items: center; /* Centre l'image verticalement */
+          width: 70px; /* Largeur du conteneur de l'icône */
+          height: 70px; /* Hauteur du conteneur de l'icône */
+          background-color: #fff; /* Couleur de fond - vous pouvez changer cela */
+          border-radius: 50%; /* Rend le fond de l'icône rond */
+          box-shadow: 0 0 8px rgba(0,0,0,0.15); /* Ajoute une légère ombre pour un effet de profondeur */
+          margin: 25px 50px; /* Ajoute 25px de marge de chaque côté de l'icône pour faire 50px d'espace total entre eux */
+        }
+
+        /* Styles spécifiques aux réseaux */
+        .facebook { background-color: #3b5998; }
+        .youtube { background-color: #FF0000; }
+        .instagram { background-color: #C13584; }
+        .tiktok { background-color: #000000; }
+
+        .reseau-text {
+        display: flex;
+        justify-content: center; /* Centre horizontalement */
+        align-items: center; /* Centre verticalement */
+        font-size: 25px; /* Définit la taille de police à 25px */
+        color: black; /* Définit la couleur du texte à noir */
+        text-align: center; /* Assure que le texte est centré même si la flexbox ne fonctionne pas */
+        background-color: rgb(208, 195, 169);
+        margin: 0;
+        padding: 25px;
+  
+      }
+
+      .intro{
+          
+          padding:30px;
+          color: black; /* Couleur du texte */
+          font-family: 'Times New Roman', Times, serif; /* Police Times New Roman */
+          font-size: 30px; /* Taille de police de 20px */
+          text-align: justify; /* Justifie le texte */
+          /* Ajoutez une petite marge à droite pour éviter que la dernière ligne ne soit trop étirée */
+          text-justify: inter-word; /* Améliore l'aspect du texte justifié */
+          background-color: rgb(208, 195, 169);
+        }
+
+
+        /* New classes */
+    .classA, .classB {
+        float: left;
+        height: 500px; /* Example height, can be adjusted */
+    }
+    
+    .classA {
+        width: 33.33%;
+        background-color: blue;
+    }
+    .classB {
+        width: 66.66%;
+        background-color: green;
+    }
+    
+
+    /* Clearfix for the floating elements */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+   
+    /* Styles pour les sous-divisions de ClassA */
+.classA1, .classA2, .classA3 {
+    width: 100%; /* Occupe toute la largeur de ClassA */
+    height: 33.33%; /* Occupe un tiers de la hauteur de ClassA */
+}
+
+.classA1 {
+    background-color: grey;
+}
+
+.classA2 {
+    background-color: blue;
+}
+
+.classA3 {
+    background-color: red;
+}
+
+/* Styles pour les sous-divisions de ClassA1 */
+.classA11, .classA21, .classA31 {
+    width: 33.33%; /* Occupe 1/3 de la largeur */
+    height: 100%; /* Occupe toute la hauteur de la classe parent */
+    float: left; /* Alignement à gauche */
+}
+
+.classA12, .classA22, .classA32 {
+    width: 66.66%; /* Occupe 2/3 de la largeur */
+    height: 100%; /* Occupe toute la hauteur de la classe parent */
+    float: left; /* Alignement à gauche */
+}
+
+.classA11 {
+    background-color: darkblue;
+}
+
+.classA12 {
+    background-color: lightblue;
+}
+
+/* Styles pour les sous-divisions de ClassA2 */
+.classA21 {
+    background-color: darkgray;
+}
+
+.classA22 {
+    background-color: lightgray;
+}
+
+/* Styles pour les sous-divisions de ClassA3 */
+.classA31 {
+    background-color: darkred;
+}
+
+.classA32 {
+    background-color: lightcoral;
+}
+
+.full-width-image {
+  width: 100%; /* Fait en sorte que l'image remplisse toute la largeur de ClassA11 */
+  height: 100%; /* Fait en sorte que l'image remplisse toute la hauteur de ClassA11 */
+  object-fit: cover; /* Assure que l'image couvre toute la zone sans être déformée */
+}
+     /************************************************************* Media Query pour smartphones **************************************************************/
+     @media (max-width: 900px) {
+        .hamburger-menu {
+          display: block;
+        }
+
+        .header .button {
+          display: none; /* Cache les boutons dans le header */
+        }
+
+        .header {
+          justify-content: space-between; /* Ajuste les éléments du header */
+        }
+
+
+        .content {
+        /* Réglez une largeur maximale pour le contenu */
+        max-width: 100%; /* Ajustez selon vos besoins */
+        overflow-x: hidden; /* Empêche la barre de défilement horizontale */
+        }
+        .full-width-video {
+        height: 650px;
+        
+          }
+        .video-text {
+        font-size: 40px; /* Diminuez la taille de la police */
+        top: 40%; /* Position verticale */
+        left: 50%; /* Position horizontale */
+        transform: translate(-50%, -50%); /* Centre le texte exactement */
+        width: auto; /* Permet au texte de prendre la largeur nécessaire */
+        }
+
+        .rounded-icon {
+            width: 40px; /* ou la taille que vous préférez */
+            height: 40px; /* ou la taille que vous préférez */
+            border-radius: 10%; /* Ceci rend l'image ronde */
+            object-fit: cover; /* Assure que l'image couvre bien tout le cercle */
+            margin: 0px; /* Ajoute un peu d'espace autour des icônes */
+            padding: 0;
+            }
+        .social-icon {
+        margin: 15px 15px; /* Ajoute 25px de marge de chaque côté de l'icône pour faire 50px d'espace total entre eux */
+        }
+
+        .reseau-text {
+            font-size: 20px; /* Définit la taille de police à 25px */
+            }
+            .intro{
+            font-size: 18px; /* Taille de police de 20px */
+            text-align: left;
+            }
+
+            .classA11, .classA21, .classA31,
+    .classA12, .classA22, .classA32 {
+        width: 100%; /* Chaque classe prendra toute la largeur */
+        float: none; /* Désactivez le flottement pour aligner les éléments verticalement */
+    }
+      }
+
+      @media only screen and (min-width: 900px) and (max-width: 1223px) { 
+.content {
+   height: 450px;
+}
+      }
+
+
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <button class="hamburger-menu">☰</button>
+    <div class="buttons-container">
+      <button class="button" onclick="window.location.href='index.html'">Accueil</button>
+      <button class="button" onclick="window.location.href='medium.html'">Médiumnité</button>
+      <button class="button" onclick="window.location.href='soins.html'">Soins énergétiques</button>
+      <button class="button" onclick="window.location.href='voyance.html'">Voyance</button>
+      <button class="button" onclick="window.location.href='boutique.html'">Boutique</button>
+      <button class="button" onclick="window.location.href='contact.html'">Contact</button>
+    </div>
+  </div>
+    <!-- Les éléments du menu déroulant -->
+    <div class="menu-items">
+      <button class="button" onclick="window.location.href='index.html'">Accueil</button>
+      <button class="button" onclick="window.location.href='medium.html'">Médiumnité</button>
+      <button class="button" onclick="window.location.href='soins.html'">Soins énergétiques</button>
+      <button class="button" onclick="window.location.href='voyance.html'">Voyance</button>
+      <button class="button" onclick="window.location.href='boutique.html'">Boutique</button>
+      <button class="button" onclick="window.location.href='contact.html'">Contact</button>
+    </div>
+ 
+</div>
+
+<div class="content">
+    <div class="video-container">
+      <video class= "full-width-video" src="index.mp4" autoplay muted playsinline style="object-fit: cover;" playbackRate="2">
+        Désolé, votre navigateur ne prend pas en charge les vidéos intégrées.
+      </video>
+    </div>
+    <p class="video-text">La Lumière de salomé <BR>Guidances et Soins</p> 
+  </div>
+  
+  <p class="reseau-text">Suivez moi sur les réseaux sociaux, cliquez sur les icônes ci-dessous.</p>
+
+  <div class="reseau">
+  
+    <a href="https://facebook.com/Hildegarde.ETHALON.LOIGET" class="social-icon facebook" target="_blank">
+      <img src="facebook.png" alt="Facebook" class="rounded-icon">
+    </a>
+    <a href="https://www.youtube.com/@lalumieredesalomeguidancee3071" class="social-icon youtube" target="_blank">
+      <img src="youtube.png" alt="YouTube" class="rounded-icon">
+    </a>
+    <a href="https://www.instagram.com/lalumieredesalome/?hl=fr" class="social-icon instagram" target="_blank">
+      <img src="instagram.png" alt="Instagram" class="rounded-icon">
+    </a>
+    <a href="https://www.tiktok.com/@lillyersilie" class="social-icon tiktok" target="_blank">
+      <img src="tiktok.png" alt="TikTok" class="rounded-icon">
+    </a>
+  </div>
+
+  <div class="intro">
+    <p >Bienvenue sur mon espace spirituel<BR><BR>
+      Je m'appelle Salomé, et je suis médium et guide spirituel depuis plus de 10 ans. Mon parcours a débuté suite à des événements bouleversants qui ont ouvert mes capacités psychiques. En tant que médium, je possède des dons tels que la clairvoyance, la clairaudience. J'offre des consultations de voyance approfondies, communique avec les défunts et pratique la lecture d'âme pour la guérison et le développement personnel. Je maîtrise également diverses techniques de soins énergétiques, y compris le Reiki et le LaHoChi, et je suis spécialisée dans le dégagement des énergies négatives. Mon objectif est d'accompagner chaque individu avec empathie et discrétion sur son chemin de vie.
+      <BR><BR>Salomé</p>
+  </div>
+
+  <div class="classA">
+    <div class="classA1">
+        <div class="classA11"> <img src="b.png" alt="Image Description" class="full-width-image"></div>
+        <div class="classA12">Contenu pour la ClassA12</div>
+    </div>
+    <div class="classA2">
+        <div class="classA21">Contenu pour la ClassA21</div>
+        <div class="classA22">Contenu pour la ClassA22</div>
+    </div>
+    <div class="classA3">
+        <div class="classA31">Contenu pour la ClassA31</div>
+        <div class="classA32">Contenu pour la ClassA32</div>
+    </div>
+</div>
+  <div class="classB">Contenu pour la Classe B</div>
+<script>
+  // Script pour gérer le menu hamburger
+  document.addEventListener('DOMContentLoaded', function() {
+    var hamburger = document.querySelector('.hamburger-menu');
+    var menu = document.querySelector('.menu-items');
+
+    hamburger.addEventListener('click', function() {
+      menu.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>
