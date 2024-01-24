@@ -131,7 +131,7 @@
 
       .image-text {
         color: rgb(46, 32, 124);
-        font-size: 22px;
+        font-size: 20px;
         font-family: 'Roboto', sans-serif;
         text-align: justify;
         max-width: 80%;
@@ -213,7 +213,16 @@
       
       }
 
-
+      @media only screen and (min-width: 400px) and (max-width: 500px) { 
+    /* la regle s'applique pour une taille d'ecran comprise entre 320px - 479px */
+    .image-text {
+    font-size: 16px; /* Smaller font size for mobile devices */
+    }
+    .content {
+    /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
+    height: 200px; /* Exemple : Réduire la hauteur sur les petits écrans */
+  }
+}
       @media only screen and (min-width: 200px) and (max-width: 400px) { 
     /* la regle s'applique pour une taille d'ecran comprise entre 320px - 479px */
     .image-text {
