@@ -20,6 +20,11 @@
   display: flex;
   flex-wrap: wrap;
 }
+/* Style général */
+.image-container-soins {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 
 /* Style du bandeau avec le menu hamburger */
@@ -124,6 +129,21 @@ margin-right: auto;
   padding-bottom: 20px;
 }
 
+.content-soins {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-image: url('background_soins.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: rgb(203, 33, 138);
+  font-size: 60px;
+  padding-bottom: 20px;
+}
+
 /* Style des wrappers pour images */
 .image-wrapper-meduim {
   width: 50%;
@@ -134,6 +154,14 @@ margin-right: auto;
 
 /* Style des wrappers pour images */
 .image-wrapper-voyance {
+  width: 50%;
+  height: 500px;
+  background-color: black;
+  overflow: hidden;
+}
+
+/* Style des wrappers pour images */
+.image-wrapper-soins {
   width: 50%;
   height: 500px;
   background-color: black;
@@ -151,6 +179,16 @@ margin-right: auto;
 }
 
 .image-text-voyance {
+  color: rgb(46, 32, 124);
+  font-size: 26px;
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+  max-width: 80%;
+  margin-top: 50px;
+  padding:30px
+}
+
+.image-text-soins {
   color: rgb(46, 32, 124);
   font-size: 26px;
   font-family: 'Roboto', sans-serif;
@@ -180,6 +218,46 @@ margin-right: auto;
   animation: slideInFromRight 0.8s ease-out forwards;
 }
 
+/* Styles pour les images avec animation */
+.image2-voyance, .image3-voyance {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.image2-voyance {
+  background-image: url('image2_voyance.jpg');
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.image3-voyance {
+  background-image: url('image3_voyance.webp');
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+/* Styles pour les images avec animation */
+.image2-soins, .image3-soins {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.image2-soins {
+  background-image: url('image2_voyance.jpg');
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.image3-soins {
+  background-image: url('image3_soins.webp');
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
 
 .italic-text {
   font-style: italic;
@@ -187,6 +265,26 @@ margin-right: auto;
 
 /* Style pour la div du texte Médiumnité */
 .medium-text {
+  position: absolute; /* Positionnement absolu par rapport à son parent relatif */
+  top: 160px; /* 120px du haut du conteneur */
+  right: 20%; /* 20px du côté gauche du conteneur */
+  color: white;
+  font-size: 60px;
+  
+}
+
+/* Style pour la div du texte Médiumnité */
+.voyance-text {
+  position: absolute; /* Positionnement absolu par rapport à son parent relatif */
+  top: 160px; /* 120px du haut du conteneur */
+  right: 20%; /* 20px du côté gauche du conteneur */
+  color: white;
+  font-size: 60px;
+  
+}
+
+  /* Style pour la div du texte Médiumnité */
+  .soins-text {
   position: absolute; /* Positionnement absolu par rapport à son parent relatif */
   top: 160px; /* 120px du haut du conteneur */
   right: 20%; /* 20px du côté gauche du conteneur */
@@ -212,7 +310,7 @@ margin-right: auto;
 
 
 .contact1 {
-  background-color: rgb(245, 240, 236);
+  background-color: rgb(243, 225, 213);
     display: flex; /* Utilise flexbox pour le centrage */
     align-items: center; /* Centre verticalement */
     justify-content: center; /* Centre horizontalement */
@@ -229,14 +327,14 @@ margin-right: auto;
     display: flex;
     justify-content: left;
     align-items: center;
-    background-color: rgb(245, 240, 236);
+    background-color: rgb(243, 225, 213);
 
 }
 
 .contact2 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: rgb(202, 230, 181);
+    background-color: rgb(255, 255, 234);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -251,42 +349,7 @@ margin-right: auto;
     background-color: #e2e6ea; /* Couleur de fond au survol */
 }
             
-
-
-
-
-/* Styles pour les images avec animation */
-.image2-voyance, .image3-voyance {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  display: flex;
-  align-items: top;
-  justify-content: center;
-}
-
-.image2-voyance {
-  background-image: url('image2_voyance.jpg');
-  animation: slideInFromLeft 0.8s ease-out forwards;
-}
-
-.image3-voyance {
-  background-image: url('image3_voyance.webp');
-  animation: slideInFromRight 0.8s ease-out forwards;
-}
-
-
-
-/* Style pour la div du texte Médiumnité */
-.voyance-text {
-  position: absolute; /* Positionnement absolu par rapport à son parent relatif */
-  top: 160px; /* 120px du haut du conteneur */
-  right: 20%; /* 20px du côté gauche du conteneur */
-  color: white;
-  font-size: 60px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-     
+  
 
 @media only screen and (min-width: 900px) and (max-width: 1240px) { 
 
@@ -294,8 +357,7 @@ margin-right: auto;
 .image-text-meduim {
 font-size: 22px; /* Smaller font size for mobile devices */
 font-family: 'Roboto', sans-serif;
-  text-align: justify;
-  
+text-align: justify;
 padding-top: 10px;
 }
 }
@@ -321,14 +383,16 @@ padding-top: 10px;
   
 }
 
-/* Style pour la div du texte Médiumnité */
-.medium-text {
-  font-size: 40px; /* Réduisez la taille de police pour s'adapter aux smartphones */
-  text-align: center; /* Centrez horizontalement le texte */
-  top: 50%; /* Déplacez le texte vers le centre de l'écran */
-  right: auto; /* Réinitialisez la propriété right pour centrer le texte complètement */
-  transform: translate(0, -50%); /* Utilisez transform pour centrer verticalement */
+.image-wrapper-voyance {
+  width: 100%; /* Ajustez la largeur à 100% du conteneur parent */
+  
 }
+
+.image-wrapper-soins {
+  width: 100%; /* Ajustez la largeur à 100% du conteneur parent */
+  
+}
+
 .image-text-meduim {
   font-size: 24px; /* Smaller font size for mobile devices */
   padding: 30px; /* Padding around the text */
@@ -343,20 +407,20 @@ padding-top: 10px;
   margin: 20px
 }
 
-.content-meduim {
-  /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
-  height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
+.image-text-soins {
+  font-size: 24px; /* Smaller font size for mobile devices */
+  padding: 30px; /* Padding around the text */
+  text-align: start; /* Justify the text */
+  margin: 20px
 }
 
-
-.content-voyance {
-  /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
-  height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
-}
-
-.image-wrapper-voyance {
-  width: 100%; /* Ajustez la largeur à 100% du conteneur parent */
-  
+/* Style pour la div du texte Médiumnité */
+.medium-text {
+  font-size: 40px; /* Réduisez la taille de police pour s'adapter aux smartphones */
+  text-align: center; /* Centrez horizontalement le texte */
+  top: 50%; /* Déplacez le texte vers le centre de l'écran */
+  right: auto; /* Réinitialisez la propriété right pour centrer le texte complètement */
+  transform: translate(0, -50%); /* Utilisez transform pour centrer verticalement */
 }
 
 /* Style pour la div du texte Médiumnité */
@@ -368,10 +432,33 @@ padding-top: 10px;
   transform: translate(0, -50%); /* Utilisez transform pour centrer verticalement */
 }
 
-.voyance-text {
-font-size: 40px;
-text-align: center;
+.soins-text {
+  font-size: 40px; /* Réduisez la taille de police pour s'adapter aux smartphones */
+  text-align: center; /* Centrez horizontalement le texte */
+  top: 50%; /* Déplacez le texte vers le centre de l'écran */
+  right: auto; /* Réinitialisez la propriété right pour centrer le texte complètement */
+  transform: translate(0, -50%); /* Utilisez transform pour centrer verticalement */
 }
+
+.content-meduim {
+  /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
+  height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
+}
+
+
+.content-voyance {
+  /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
+  height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
+}
+
+.content-soins {
+  /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
+  height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
+}
+
+
+
+
 
 .contact {
   flex-direction: column; /* Les éléments enfants s'alignent verticalement */
@@ -410,11 +497,22 @@ font-size: 20px; /* Smaller font size for mobile devices */
 padding:15px;
 
 }
+
+.image-text-soins {
+font-size: 20px; /* Smaller font size for mobile devices */
+padding:15px;
+}
+
 .content-meduim {
   /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
   height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
   }
 .content-voyance {
+/* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
+height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
+}
+
+.content-soins {
 /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
 height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
 }
@@ -482,7 +580,8 @@ height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
 <div class="image-container-meduim">
   <div class="image-wrapper-meduim">
     <div class="image2-meduim">
-      <p class="image-text-meduim">Explorez la médiumnité à travers un espace dédié où la communication avec l'au-delà est facilitée. Cette pratique, fondée sur la sensibilité et l'intuition, offre des lectures personnalisées avec respect et empathie pour établir des liens avec les défunts. Que vous cherchiez des réponses, du réconfort ou une connexion spirituelle, l'approche se centre sur l'écoute et l'accompagnement, offrant un soutien unique pour éclairer votre chemin avec sensibilité et respect.</p>
+      <p class="image-text-meduim">
+        Découvrez la médiumnité dans un espace dédié, favorisant la communication avec l'au-delà par le biais de lectures personnalisées. Fondée sur la sensibilité et l'intuition, cette pratique offre respect et empathie pour établir des liens avec les défunts. Que vous recherchiez des réponses, du réconfort ou une connexion spirituelle, l'approche se concentre sur l'écoute et l'accompagnement, fournissant un soutien unique pour éclairer votre chemin avec sensibilité et respect.</p>
     </div>
   </div>
   <div class="image-wrapper-meduim">
@@ -498,7 +597,7 @@ height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
 <div class="image-container-voyance">
   <div class="image-wrapper-voyance">
     <div class="image2-voyance">
-      <p class="image-text-voyance">Je vous invite à découvrir mes services de <span class="italic-text">guidance spirituelle personnalisée</span>, notamment à travers le tirage de <span class="italic-text">cartes</span>. Cette pratique divinatoire ancestrale vous offre des perspectives uniques et des conseils adaptés à votre <span class="italic-text">chemin de vie</span>. Que vous cherchiez des réponses à des <span class="italic-text">questions précises</span> ou un éclairage général sur votre <span class="italic-text">situation actuelle</span>, la <span class="italic-text">guidance personnalisée</span> est là pour vous accompagner vers la <span class="italic-text">clarté</span> et la <span class="italic-text">confiance</span> en votre <span class="italic-text">avenir</span>.</p>
+      <p class="image-text-voyance">Explorez mes services de guidance spirituelle personnalisée, incluant le tirage de cartes, une pratique divinatoire ancestrale. Obtenez des perspectives uniques et des conseils adaptés à votre chemin de vie, que vous cherchiez des réponses spécifiques ou un éclairage général. La guidance personnalisée vous accompagne vers la clarté et la confiance en votre avenir, offrant un soutien précieux.</p>
     </div>
   </div>
   <div class="image-wrapper-voyance">
@@ -507,6 +606,24 @@ height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
     </div>
   </div>
 </div>
+
+<div class="content-soins">
+  <div class="soins-text">Soins Energétiques</div>
+</div>
+
+<div class="image-container-soins">
+  <div class="image-wrapper-soins">
+    <div class="image2-soins">
+      <p class="image-text-soins">Explorez un monde de bien-être grâce à mes services exclusifs axés sur l'harmonie intérieure. Mes séances de magnétisme, Reiki et LaHoChi visent à rééquilibrer les énergies du corps, réduire le stress et favoriser la guérison spirituelle. Chaque soin, guidé par l'intuition, est adapté à vos besoins uniques pour vous conduire vers un état de bien-être total.</p>
+    </div>
+  </div>
+  <div class="image-wrapper-soins">
+    <div class="image3-soins">
+      <!-- Aucun texte pour image3-soins -->
+    </div>
+  </div>
+</div>
+
 <div class="contact">
   <div class="contact1">
     <img src="photo.png" alt="Photo" class="centered-image">
