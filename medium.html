@@ -8,33 +8,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Voyance</title>
     <style>
-      /* Style général */
-      .image-container {
-        display: flex;
-        flex-wrap: wrap;
-      }
 
-      /* Style du bandeau avec le menu hamburger */
-      .header {
-        width: 100%;
-        height: 50px;
-        background-image: url('bandeau.jpg');
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* Ajusté pour positionner le menu hamburger */
-        padding: 0 10px; /* Ajouté pour un peu d'espace */
-      }
 
-       /* Style du menu hamburger (caché par défaut) */
-       .hamburger-menu {
-        display: none;
-        font-size: 24px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        margin-right: auto;
-      }
+/* Style général */
+
+.image-container-meduim {
+  display: flex;
+  flex-wrap: wrap;
+}
+.image-container-voyance {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Style général */
+.image-container-soins {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* Style du bandeau avec le menu hamburger */
+.header {
+  width: 100%;
+  height: 50px;
+  background-image: url('bandeau.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ajusté pour positionner le menu hamburger */
+  padding: 0 10px; /* Ajouté pour un peu d'espace */
+}
+
+  /* Style du menu hamburger (caché par défaut) */
+.hamburger-menu {
+display: none;
+font-size: 24px;
+background: none;
+border: none;
+cursor: pointer;
+margin-right: auto;
+}
 
 .buttons-container {
   display: flex;
@@ -42,8 +55,8 @@
   flex-grow: 1; /* Permet aux boutons de prendre tout l'espace disponible */
 }
 
-      /* Cachez le menu déroulant par défaut */
- .menu-items {
+/* Cachez le menu déroulant par défaut */
+.menu-items {
   display: none; /* reste caché par défaut */
   flex-direction: column;
   align-items: flex-start;
@@ -52,43 +65,44 @@
   top: 50px; /* Juste en dessous du header */
   left: 10px; /* Légèrement décalé à gauche pour l'aligner avec le menu hamburger */
   z-index: 1000; /* S'assurer qu'il est au-dessus des autres éléments */
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Ajoute une ombre pour un effet de profondeur */
+  
   padding: 10px; /* Un peu de padding autour des éléments de menu */
 }
 
 
-      /* Style des boutons lorsqu'ils sont dans le menu déroulant */
-      .menu-items .button {
-        display: block;
-        width: 100%;
-        text-align: left;
-      }
+/* Style des boutons lorsqu'ils sont dans le menu déroulant */
+.menu-items .button {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
 /* Style du menu déroulant lorsqu'il est actif */
 .menu-items.active {
   display: inline-flex;
 }
 
-      /* Style des boutons */
-      .button {
-        margin: 5px 0; /* Ajusté pour le menu déroulant */
-        padding: 10px 20px;
-        background-color: #FDFFF4;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 22px; /* Ajusté pour un meilleur ajustement dans le menu */
-        transition: background-color 0.3s;
-      }
+/* Style des boutons */
+.button {
+  margin: 5px 0; /* Ajusté pour le menu déroulant */
+  padding: 10px 20px;
+  background-color: #FDFFF4;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 22px; /* Ajusté pour un meilleur ajustement dans le menu */
+  transition: background-color 0.3s;
+}
 
-      .button:hover {
-        background-color: #e2e6ea;
-      }
+.button:hover {
+  background-color: #e2e6ea;
+}
 
-      .content {
+.content-meduim {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 600px;
   background-image: url('meduim.webp');
   background-size: cover;
   background-position: center;
@@ -97,58 +111,189 @@
   justify-content: center;
   color: rgb(234, 250, 240);
   font-size: 60px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   padding-bottom: 20px;
 }
 
-      /* Style des wrappers pour images */
-      .image-wrapper {
-        width: 50%;
-        height: 500px;
-        background-color: black;
-        overflow: hidden;
-      }
+.content-voyance {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-image: url('background_voyance.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: rgb(203, 33, 138);
+  font-size: 60px;
+  padding-bottom: 20px;
+}
 
-      /* Styles pour les images avec animation */
-      .image2, .image3 {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+.content-soins {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-image: url('background_soins.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: rgb(203, 33, 138);
+  font-size: 60px;
+  padding-bottom: 20px;
+}
 
-      .image2 {
-        background-image: url('image2_medium.jpg');
-        animation: slideInFromLeft 0.8s ease-out forwards;
-      }
+/* Style des wrappers pour images */
+.image-wrapper-meduim {
+  width: 50%;
+  height: 500px;
+  background-color: black;
+  overflow: hidden;
+}
 
-      .image3 {
-        background-image: url('image3_medium.webp');
-        animation: slideInFromRight 0.8s ease-out forwards;
-      }
+/* Style des wrappers pour images */
+.image-wrapper-voyance {
+  width: 50%;
+  height: 500px;
+  background-color: black;
+  overflow: hidden;
+}
 
-      .image-text {
-        color: rgb(46, 32, 124);
-        font-size: 20px;
-        font-family: 'Roboto', sans-serif;
-        text-align: justify;
-        max-width: 80%;
-        margin-top: 10px;
-      }
+/* Style des wrappers pour images */
+.image-wrapper-soins {
+  width: 50%;
+  height: 500px;
+  background-color: black;
+  overflow: hidden;
+}
 
-      /* Style pour la div du texte Médiumnité */
-      .medium-text {
-        position: absolute; /* Positionnement absolu par rapport à son parent relatif */
-        top: 160px; /* 120px du haut du conteneur */
-        right: 20%; /* 20px du côté gauche du conteneur */
-        color: white;
-        font-size: 60px;
-       
-      }
+.image-text-meduim {
+  color: rgb(46, 32, 124);
+  font-size: 26px;
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+  max-width: 80%;
+  margin-top: 50px;
+  padding:30px
+}
 
-      /* Style pour la classe principale 'contact' */
+.image-text-voyance {
+  color: rgb(46, 32, 124);
+  font-size: 26px;
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+  max-width: 80%;
+  margin-top: 50px;
+  padding:30px
+}
+
+.image-text-soins {
+  color: rgb(46, 32, 124);
+  font-size: 26px;
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+  max-width: 80%;
+  margin-top: 50px;
+  padding:30px
+}
+
+/* Styles pour les images avec animation */
+.image2-meduim, .image3-meduim {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.image2-meduim {
+  background-image: url('image2_voyance.jpg');
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.image3-meduim {
+  background-image: url('image3_medium.webp');
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+/* Styles pour les images avec animation */
+.image2-voyance, .image3-voyance {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.image2-voyance {
+  background-image: url('image2_voyance.jpg');
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.image3-voyance {
+  background-image: url('image3_voyance.webp');
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+/* Styles pour les images avec animation */
+.image2-soins, .image3-soins {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.image2-soins {
+  background-image: url('image2_voyance.jpg');
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.image3-soins {
+  background-image: url('image3_soins.webp');
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+
+.italic-text {
+  font-style: italic;
+}
+
+/* Style pour la div du texte Médiumnité */
+.medium-text {
+  position: absolute; /* Positionnement absolu par rapport à son parent relatif */
+  top: 160px; /* 120px du haut du conteneur */
+  right: 20%; /* 20px du côté gauche du conteneur */
+  color: white;
+  font-size: 60px;
+  
+}
+
+/* Style pour la div du texte Médiumnité */
+.voyance-text {
+  position: absolute; /* Positionnement absolu par rapport à son parent relatif */
+  top: 160px; /* 120px du haut du conteneur */
+  right: 20%; /* 20px du côté gauche du conteneur */
+  color: white;
+  font-size: 60px;
+  
+}
+
+  /* Style pour la div du texte Médiumnité */
+  .soins-text {
+  position: absolute; /* Positionnement absolu par rapport à son parent relatif */
+  top: 160px; /* 120px du haut du conteneur */
+  right: 20%; /* 20px du côté gauche du conteneur */
+  color: white;
+  font-size: 60px;
+  
+}
+
+/* Style pour la classe principale 'contact' */
 .contact {
     display: flex; /* Utilisez flex pour aligner les sous-divisions côte à côte */
     width: 100%; /* Prend toute la largeur disponible */
@@ -158,14 +303,14 @@
 /* Styles pour les sous-classes 'contact1' et 'contact2' */
 .contact1, .contact2 {
     width: 50%; /* Chaque sous-classe occupe la moitié de la largeur de 'contact' */
-   padding-top: 50px;
-   
+  padding-top: 50px;
+  
     /* Ajoutez ici d'autres styles comme le padding, la marge, etc., selon vos besoins */
 }
 
 
 .contact1 {
-  background-color: rgb(245, 240, 236);
+  background-color: rgb(243, 225, 213);
     display: flex; /* Utilise flexbox pour le centrage */
     align-items: center; /* Centre verticalement */
     justify-content: center; /* Centre horizontalement */
@@ -182,14 +327,14 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    background-color: rgb(245, 240, 236);
+    background-color: rgb(243, 225, 213);
 
 }
 
 .contact2 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: rgb(202, 230, 181);
+    background-color: rgb(255, 255, 234);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -203,134 +348,206 @@
 .contact2 .button:hover {
     background-color: #e2e6ea; /* Couleur de fond au survol */
 }
-      
-
-     
-
-      @media only screen and (min-width: 900px) and (max-width: 1240px) { 
-    /* la regle s'applique pour une taille d'ecran comprise entre 320px - 479px */
-    .image-text {
-    font-size: 20px; /* Smaller font size for mobile devices */
-    padding-top: 10px;
-    }
+            
   
-  }
+
+@media only screen and (min-width: 900px) and (max-width: 1240px) { 
+
+/* la regle s'applique pour une taille d'ecran comprise entre 320px - 479px */
+.image-text-meduim {
+font-size: 22px; /* Smaller font size for mobile devices */
+font-family: 'Roboto', sans-serif;
+text-align: justify;
+padding-top: 10px;
+}
+}
  
-      /* Media Query pour smartphones */
-     @media (max-width: 900px) {
-        .hamburger-menu {
-          display: block;
-        }
+/* Media Query pour smartphones */
 
-        .header .button {
-          display: none; /* Cache les boutons dans le header */
-        }
+@media (max-width: 900px) {
 
-        .header {
-          justify-content: space-between; /* Ajuste les éléments du header */
-        }
-
-        .image-wrapper {
-          width: 100%; /* Ajustez la largeur à 100% du conteneur parent */
-         
-        }
-
-              /* Style pour la div du texte Médiumnité */
-              .medium-text {
-                font-size: 40px; /* Réduisez la taille de police pour s'adapter aux smartphones */
-                text-align: center; /* Centrez horizontalement le texte */
-                top: 50%; /* Déplacez le texte vers le centre de l'écran */
-                right: auto; /* Réinitialisez la propriété right pour centrer le texte complètement */
-                transform: translate(0, -50%); /* Utilisez transform pour centrer verticalement */
-              }
-                  .image-text {
-                font-size: 18px; /* Smaller font size for mobile devices */
-                padding: 10px; /* Padding around the text */
-                text-align: justify; /* Justify the text */
-              }
-
-  .content {
-    /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
-    height: 300px; /* Exemple : Réduire la hauteur sur les petits écrans */
-  }
-  .image-text {
-    font-size: 22px; /* Smaller font size for mobile devices */
-    padding-top: 10px;
-    }
-  .medium-text {
-        
-        font-size: 40px;
-        text-align: center;
-        /*right: 30%; /* 30px du côté gauche du conteneur */
-        /*top: 70%;*/ /* 20px du bas du conteneur */
-        
-      }
-
-
-
-      .contact {
-        flex-direction: column; /* Les éléments enfants s'alignent verticalement */
-    }
-
-    .contact1, .contact2 {
-        width: 100%; /* Chaque sous-classe occupe toute la largeur du parent */
-
-       
-    }
-
-
-    .contact2 {
-padding-bottom: 40px;
-    }
-    .contact2 button, .contact2 .button {
-        margin: 0 auto; /* Centre le bouton horizontalement */
-        display: block; /* Rend le bouton en tant qu'élément de bloc */
-        font-size: 30px;
-        font-family: 'Roboto', sans-serif;
-    }
-      
-      }
-
-
-      @media only screen and (min-width: 200px) and (max-width: 500px) { 
-    /* la regle s'applique pour une taille d'ecran comprise entre 320px - 479px */
-    .image-text {
-    font-size: 16px; /* Smaller font size for mobile devices */
-    padding-top: 10px;
-    }
-    .content {
-    /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
-    height: 300px; /* Exemple : Réduire la hauteur sur les petits écrans */
-  }
+.hamburger-menu {
+  display: block;
 }
 
-      /* Animations */
-      @keyframes slideInFromLeft {
-        from {
-          transform: translateX(-100%);
-        }
-        to {
-          transform: translateX(0);
-        }
-      }
+.header .button {
+  display: none; /* Cache les boutons dans le header */
+}
 
-      @keyframes slideInFromRight {
-        from {
-          transform: translateX(100%);
-        }
-        to {
-          transform: translateX(0);
-        }
-      }
+.header {
+  justify-content: space-between; /* Ajuste les éléments du header */
+}
 
-      @keyframes slideInFromTop {
-        from {
-          transform: translateY(-100%);
-        }
-        to {
-          transform: translateY(0);
-        }
+.image-wrapper-meduim {
+  width: 100%; /* Ajustez la largeur à 100% du conteneur parent */
+  
+}
+
+.image-wrapper-voyance {
+  width: 100%; /* Ajustez la largeur à 100% du conteneur parent */
+  
+}
+
+.image-wrapper-soins {
+  width: 100%; /* Ajustez la largeur à 100% du conteneur parent */
+  
+}
+
+.image-text-meduim {
+  font-size: 24px; /* Smaller font size for mobile devices */
+  padding: 30px; /* Padding around the text */
+  text-align: start; /* Justify the text */
+  margin: 20px
+}
+
+.image-text-voyance {
+  font-size: 24px; /* Smaller font size for mobile devices */
+  padding: 30px; /* Padding around the text */
+  text-align: start; /* Justify the text */
+  margin: 20px
+}
+
+.image-text-soins {
+  font-size: 24px; /* Smaller font size for mobile devices */
+  padding: 30px; /* Padding around the text */
+  text-align: start; /* Justify the text */
+  margin: 20px
+}
+
+/* Style pour la div du texte Médiumnité */
+.medium-text {
+  font-size: 40px; /* Réduisez la taille de police pour s'adapter aux smartphones */
+  text-align: center; /* Centrez horizontalement le texte */
+  top: 50%; /* Déplacez le texte vers le centre de l'écran */
+  right: auto; /* Réinitialisez la propriété right pour centrer le texte complètement */
+  transform: translate(0, -50%); /* Utilisez transform pour centrer verticalement */
+}
+
+/* Style pour la div du texte Médiumnité */
+.voyance-text {
+  font-size: 40px; /* Réduisez la taille de police pour s'adapter aux smartphones */
+  text-align: center; /* Centrez horizontalement le texte */
+  top: 50%; /* Déplacez le texte vers le centre de l'écran */
+  right: auto; /* Réinitialisez la propriété right pour centrer le texte complètement */
+  transform: translate(0, -50%); /* Utilisez transform pour centrer verticalement */
+}
+
+.soins-text {
+  font-size: 40px; /* Réduisez la taille de police pour s'adapter aux smartphones */
+  text-align: center; /* Centrez horizontalement le texte */
+  top: 50%; /* Déplacez le texte vers le centre de l'écran */
+  right: auto; /* Réinitialisez la propriété right pour centrer le texte complètement */
+  transform: translate(0, -50%); /* Utilisez transform pour centrer verticalement */
+}
+
+.content-meduim {
+  /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
+  height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
+}
+
+
+.content-voyance {
+  /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
+  height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
+}
+
+.content-soins {
+  /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
+  height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
+}
+
+
+.contact {
+  flex-direction: column; /* Les éléments enfants s'alignent verticalement */
+}
+
+.contact1, .contact2 {
+    width: 100%; /* Chaque sous-classe occupe toute la largeur du parent */
+}
+
+.contact2 {
+  padding-bottom: 40px;
+}
+
+.contact2 button, .contact2 .button {
+    margin: 0 auto; /* Centre le bouton horizontalement */
+    display: block; /* Rend le bouton en tant qu'élément de bloc */
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+}
+
+
+@media only screen and (min-width: 200px) and (max-width: 500px) { 
+
+/* la regle s'applique pour une taille d'ecran comprise entre 320px - 479px */
+.image-text-meduim {
+font-size: 20px; /* Smaller font size for mobile devices */
+padding:15px;
+
+}
+
+  /* la regle s'applique pour une taille d'ecran comprise entre 320px - 479px */
+.image-text-voyance {
+font-size: 20px; /* Smaller font size for mobile devices */
+padding:15px;
+
+}
+
+.image-text-soins {
+font-size: 20px; /* Smaller font size for mobile devices */
+padding:15px;
+}
+
+.content-meduim {
+  /* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
+  height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
+  }
+.content-voyance {
+/* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
+height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
+}
+
+.content-soins {
+/* Vous pouvez ajuster la hauteur ou d'autres propriétés ici si nécessaire */
+height: 400px; /* Exemple : Réduire la hauteur sur les petits écrans */
+}
+
+.image3-medium {
+        display: none;
+    }
+
+}
+
+    /* Animations */
+    @keyframes slideInFromLeft {
+      from {
+        transform: translateX(-100%);
       }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
     </style>
 </head>
 <body>
@@ -358,22 +575,26 @@ padding-bottom: 40px;
  
 </div>
 
-<div class="content">
+<div class="content-meduim">
   <div class="medium-text">Médiumnité</div>
 </div>
 
-<div class="image-container">
-  <div class="image-wrapper">
-    <div class="image2">
-      <p class="image-text">Bienvenue sur ma page dédiée à la médiumnité. Ici, je vous invite à découvrir un espace où la communication avec l'au-delà devient possible. Ma pratique, fondée sur la sensibilité et l'intuition, vous aide à établir des liens avec ceux qui ne sont plus parmi nous. Je vous offre des lectures personnalisées, vous guidant avec respect et empathie. Que vous cherchiez des réponses, du réconfort ou une simple connexion, mon approche est centrée sur l'écoute et l'accompagnement dans votre quête spirituelle. Explorez les mystères de l'invisible et trouvez un soutien unique. Je suis là pour éclairer votre chemin avec sensibilité et respect.</p>
+<div class="image-container-meduim">
+  <div class="image-wrapper-meduim">
+    <div class="image2-meduim">
+      <p class="image-text-meduim">
+        Découvrez la médiumnité dans un espace dédié, favorisant la communication avec l'au-delà par le biais de lectures personnalisées. Fondée sur la sensibilité et l'intuition, cette pratique offre respect et empathie pour établir des liens avec les défunts. Que vous recherchiez des réponses, du réconfort ou une connexion spirituelle, l'approche se concentre sur l'écoute et l'accompagnement, fournissant un soutien unique pour éclairer votre chemin avec sensibilité et respect.</p>
     </div>
   </div>
-  <div class="image-wrapper">
-    <div class="image3">
-      <!-- Aucun texte pour image3 -->
+  <div class="image-wrapper-meduim">
+    <div class="image3-meduim">
+      <!-- Aucun texte pour image3-meduim -->
     </div>
   </div>
 </div>
+
+
+
 
 <div class="contact">
   <div class="contact1">
